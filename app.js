@@ -4,7 +4,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 let helmet = require("helmet");
 
-var indexRouter = require("./routes/index");
+var transactionsRoute = require("./api/routes/transactions");
 
 var app = express();
 
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(helmet());
 
-app.use("/", indexRouter);
+app.use("/api/transactions", transactionsRoute);
 /* GET home page. */
 app.get("/", function (req, res, next) {
   res.status(200).send("API up");

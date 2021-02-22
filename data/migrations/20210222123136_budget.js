@@ -5,7 +5,8 @@ exports.up = function (knex) {
     tbl.string("description");
     tbl.string("name").notNullable();
     tbl.string("category");
-    tbl.timestamp("created").defaultTo(knex.fn.now());
+    tbl.datetime("created", { useTz: false }).defaultTo(knex.fn.now());
+    tbl.date("updated").defaultTo(null);
   });
 };
 
