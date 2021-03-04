@@ -3,6 +3,7 @@ var express = require("express");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 let helmet = require("helmet");
+const cors = require("cors");
 
 var transactionsRoute = require("./api/routes/transactions");
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(helmet());
+app.use(cors());
 
 app.use("/api/transactions", transactionsRoute);
 /* GET home page. */
