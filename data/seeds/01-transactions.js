@@ -8,6 +8,7 @@ exports.seed = function (knex) {
         {
           id: 1,
           price: 13.99,
+          type: "exp",
           description: "Gift for someone",
           name: "Walmart",
           category: "groceries",
@@ -17,6 +18,7 @@ exports.seed = function (knex) {
           price: 44.99,
           description: "Gift for someone",
           name: "Walmart",
+          type: "exp",
           category: "groceries",
         },
         {
@@ -24,6 +26,7 @@ exports.seed = function (knex) {
           price: 44.99,
           description: "Gift for someone",
           name: "Walmart",
+          type: "inc",
           category: "groceries",
         },
         {
@@ -31,6 +34,7 @@ exports.seed = function (knex) {
           price: 33.99,
           description: "Gift for someone",
           name: "Walmart",
+          type: "inc",
           category: "groceries",
         },
       ]);
