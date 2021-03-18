@@ -4,6 +4,7 @@ exports.up = function (knex) {
     tbl.float("price").notNullable();
     tbl.string("description");
     tbl.string("name").notNullable();
+    tbl.string("account").notNullable();
     tbl.string("type").notNullable();
     tbl.string("category");
     tbl.datetime("created", { useTz: false }).defaultTo(knex.fn.now());
