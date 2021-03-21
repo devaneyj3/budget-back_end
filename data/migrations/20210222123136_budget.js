@@ -2,7 +2,6 @@ exports.up = function (knex) {
   return knex.schema.createTable("transactions", (tbl) => {
     tbl.increments();
     tbl.float("price").notNullable();
-    tbl.string("description");
     tbl.string("name").notNullable();
     tbl.string("account").notNullable();
     tbl.string("type").notNullable();

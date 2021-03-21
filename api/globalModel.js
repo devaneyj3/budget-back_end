@@ -11,15 +11,21 @@ const deleteData = (table, id) => {
   return db(table).where({ id }).del();
 };
 const postData = async (table, req) => {
-  const { price, type, description, name, category } = req.body;
-  return await db(table).insert({ price, description, name, category, type });
+  const { price, account, type, name, category } = req.body;
+  return await db(table).insert({
+    price,
+    name,
+    category,
+    account,
+    type,
+  });
 };
 
 const updateData = async (table, obj, id) => {
-  const { price, type, description, name, category } = obj.body;
+  const { price, account, type, name, category } = obj.body;
   const updated = moment().format("l");
   return await db(table)
-    .update({ price, description, name, category, updated, type })
+    .update({ price, name, category, account, updated, type })
     .where({ id });
 };
 const clearDB = (table) => {
