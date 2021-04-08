@@ -9,7 +9,6 @@ var transactionsRoute = require("./api/routes/transactions");
 
 var app = express();
 
-app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -21,4 +20,6 @@ app.use("/api/transactions", transactionsRoute);
 app.get("/", function (req, res, next) {
   res.status(200).send("API up");
 });
+let port = normalizePort(process.env.PORT || "3000");
+app.listen(port);
 module.exports = app;
