@@ -3,11 +3,12 @@
 module.exports = {
   development: {
     client: "postgresql",
-    connection: {
+    connection: process.env.DATABASE_URL || {
       database: "budget",
       user: process.env.USERNAME,
       password: process.env.PASSWORD,
     },
+
     migrations: {
       directory: "./data/migrations",
     },
