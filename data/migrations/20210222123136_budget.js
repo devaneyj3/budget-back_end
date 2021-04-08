@@ -6,7 +6,7 @@ exports.up = function (knex) {
     tbl.string("account").notNullable();
     tbl.string("type").notNullable();
     tbl.string("category");
-    tbl.datetime("created", { useTz: false }).defaultTo(knex.fn.now());
+    tbl.datetime("created");
     tbl.date("updated").defaultTo(null);
   });
 };
