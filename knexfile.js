@@ -22,5 +22,6 @@ module.exports = {
     migrations: {
       directory: "./data/migrations",
     },
+    ssl: true,
   },
 };
