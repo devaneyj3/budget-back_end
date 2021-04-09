@@ -18,10 +18,14 @@ module.exports = {
   },
   production: {
     client: "postgresql",
-    connection: `${process.env.DATABASE_URL} &ssl=no-verify`,
+    debug: true,
+    client: "pg",
+    connection: {
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+    },
     migrations: {
       directory: "./data/migrations",
     },
-    ssl: { rejectUnauthorized: false },
   },
 };
