@@ -1,7 +1,7 @@
 var express = require("express");
 
 var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+
 let helmet = require("helmet");
 const cors = require("cors");
 
@@ -17,9 +17,8 @@ app.use(cors());
 
 app.use("/api/transactions", transactionsRoute);
 /* GET home page. */
-app.get("/", function (req, res, next) {
+app.get("/", function (req, res) {
   res.status(200).send("API up");
 });
-let port = normalizePort(process.env.PORT || "3000");
+let port = process.env.PORT || "3000";
 app.listen(port);
-module.exports = app;
